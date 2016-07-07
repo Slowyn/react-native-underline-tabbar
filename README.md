@@ -3,7 +3,7 @@ Custom Tabbar for https://github.com/skv-headless/react-native-scrollable-tab-vi
 
 
 ### Demo
-<a href="https://raw.githubusercontent.com/Slowyn/react-native-underline-tabbar/master/demo.gif" width="350"></a>
+![react-native-underline-tabbar demo](https://raw.githubusercontent.com/Slowyn/react-native-underline-tabbar/master/demo.gif)
 
 
 ### Usage
