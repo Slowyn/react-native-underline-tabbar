@@ -1,0 +1,27 @@
+{
+  "name": "react-native-underline-tabbar",
+  "version": "1.0.0",
+  "description": "Custom Tabbar for https://github.com/skv-headless/react-native-scrollable-tab-view",
+  "main": "tabBar.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Slowyn/react-native-underline-tabbar.git"
+  },
+  "keywords": [
+    "react-native",
+    "react-native-scrollable-tab-view",
+    "tabbar"
+  ],
+  "author": "K. E. Yakushin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Slowyn/react-native-underline-tabbar/issues"
+  },
+  "homepage": "https://github.com/Slowyn/react-native-underline-tabbar#readme"
+}
