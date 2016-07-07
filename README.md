@@ -74,4 +74,8 @@ const styles = StyleSheet.create({
 
 AppRegistry.registerComponent('example', () => example);
 ```
+Notice! In case of using this tabbar we must pass object into tabLabel property. It is needed for setting labels and badges.
 See [example here](https://github.com/Slowyn/react-native-underline-tabbar/tree/master/example)
+
+### Documentation
+It will be done if needed.
