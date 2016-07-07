@@ -106,7 +106,7 @@ class TabBar extends Component {
 
   renderTabOption(tab, page) {
     const {activeTab, tabBadgeColor} = this.props;
-    const {label, badge} = tab;
+    const {label, badge, badgeColor} = tab;
     const isTabActive = activeTab === page;
     const activeTextColor = this.props.activeTextColor || "navy";
     const inactiveTextColor = this.props.inactiveTextColor || "black";
@@ -119,7 +119,9 @@ class TabBar extends Component {
           <View style={{flexDirection: 'row'}}>
             <Text style={[{color: isTabActive ? activeTextColor : inactiveTextColor, fontWeight: isTabActive ? '400' : '400'}, textStyle]}>{label}</Text>
             {badge && badge > 0 &&
-            <View style={[styles.badgeBubble, {backgroundColor: tabBadgeColor || activeTextColor}, this.props.tabStyles.badgeBubble]}>
+            <View style={[styles.badgeBubble,
+                          this.props.tabStyles.badgeBubble,
+                          {backgroundColor: badgeColor || activeTextColor}]}>
               <Text style={[styles.badgeText, this.props.tabStyles.badgeText]}>{badge || 0}</Text>
             </View>}
           </View>

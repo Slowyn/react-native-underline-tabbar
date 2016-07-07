@@ -1,6 +1,6 @@
 {
   "name": "react-native-underline-tabbar",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Custom Tabbar for https://github.com/skv-headless/react-native-scrollable-tab-view",
   "main": "tabBar.js",
   "directories": {

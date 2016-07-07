@@ -12,7 +12,7 @@ import {
   View
 } from 'react-native';
 import ScrollableTabView from 'react-native-scrollable-tab-view';
-import TabBar from "./tabBar";
+import TabBar from "react-native-underline-tabbar";
 
 const Page = ({label}) => (
     <View style={styles.container}>
