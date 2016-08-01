@@ -118,7 +118,7 @@ class TabBar extends Component {
                           onLayout={(event) => this.onTabLayout(event, page)}>
           <View style={{flexDirection: 'row'}}>
             <Text style={[{color: isTabActive ? activeTextColor : inactiveTextColor, fontWeight: isTabActive ? '400' : '400'}, textStyle]}>{label}</Text>
-            {badge && badge > 0 &&
+            {badge != null && badge > 0 &&
             <View style={[styles.badgeBubble,
                           this.props.tabStyles.badgeBubble,
                           {backgroundColor: badgeColor || activeTextColor}]}>
