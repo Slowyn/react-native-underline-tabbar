@@ -19,7 +19,7 @@ import {
   View
 } from 'react-native';
 import ScrollableTabView from 'react-native-scrollable-tab-view';
-import TabBar from "./tabBar";
+import TabBar from "react-native-underline-tabbar";
 
 const Page = ({label}) => (
     <View style={styles.container}>
@@ -55,27 +55,6 @@ class example extends Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF'
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5
-  }
-});
-
-AppRegistry.registerComponent('example', () => example);
 ```
 Notice! In case of using this tabbar we must pass object into tabLabel property. It is needed for setting labels and badges.
 See [example here](https://github.com/Slowyn/react-native-underline-tabbar/tree/master/example)
