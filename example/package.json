@@ -1,14 +1,24 @@
 {
   "name": "example",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": true,
   "scripts": {
-    "start": "node node_modules/react-native/local-cli/cli.js start"
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest"
   },
   "dependencies": {
-    "react": "15.2.0",
-    "react-native": "0.29.0",
-    "react-native-scrollable-tab-view": "^0.5.2",
-    "react-native-underline-tabbar": "^1.0.0"
+    "react": "15.4.2",
+    "react-native": "0.42.3",
+    "react-native-scrollable-tab-view": "^0.7.3",
+    "react-native-underline-tabbar" : "file:../"
+  },
+  "devDependencies": {
+    "babel-jest": "19.0.0",
+    "babel-preset-react-native": "1.9.1",
+    "jest": "19.0.2",
+    "react-test-renderer": "15.4.2"
+  },
+  "jest": {
+    "preset": "react-native"
   }
 }

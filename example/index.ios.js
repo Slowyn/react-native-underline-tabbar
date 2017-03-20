@@ -29,14 +29,19 @@ const Page = ({label}) => (
     </View>
 );
 
-class example extends Component {
+export default class example extends Component {
   render() {
     return (
         <View style={[styles.container, {paddingTop: 20}]}>
           <ScrollableTabView
               tabBarUnderlineColor="#53ac49"
               tabBarActiveTextColor="#53ac49"
-              renderTabBar={() => <TabBar/>}>
+              renderTabBar={() => <TabBar/>}
+              >         
+            {/*
+            We have to use tabLabel to pass tab options to TabBar component,
+            because ScrollableTabView passing only this prop to tabs.
+            */}   
             <Page tabLabel={{label: "Page #1"}} label="Page #1"/>
             <Page tabLabel={{label: "Page #2 aka Long!", badge: 3}} label="Page #2 aka Long!"/>
             <Page tabLabel={{label: "Page #3"}} label="Page #3"/>
@@ -45,6 +50,7 @@ class example extends Component {
           </ScrollableTabView>
 
         </View>
+    
     );
   }
 }
@@ -54,18 +60,18 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF'
+    backgroundColor: '#F5FCFF',
   },
   welcome: {
     fontSize: 20,
     textAlign: 'center',
-    margin: 10
+    margin: 10,
   },
   instructions: {
     textAlign: 'center',
     color: '#333333',
-    marginBottom: 5
-  }
+    marginBottom: 5,
+  },
 });
 
 AppRegistry.registerComponent('example', () => example);

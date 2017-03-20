@@ -11,12 +11,13 @@ import {
     Dimensions
 } from 'react-native';
 
-const screen_width = Dimensions.get('window').width;
+const SCREEN_WIDTH = Dimensions.get('window').width;
 
 const styles = StyleSheet.create({
   tab: {
+    flexDirection: 'row',
     justifyContent: 'center',
-    marginLeft: 20,
+    marginLeft: 20,    
     paddingBottom: 10
   },
   scrollContainer: {
@@ -66,45 +67,62 @@ class TabBar extends Component {
     tabStyles: PropTypes.object
   };
 
+
   static defaultProps = {
     tabStyles: {}
   };
 
-  state = {
-    renderUnderline: false,
-    tabScrollValue: 0
-  };
-
-  componentWillMount() {
-    this.tabState = {}
+  constructor(props) {
+    super(props);
+    this.tabState = {};
+    this.state = {
+      renderUnderline: false,
+      tabScrollValue: 0
+    };
   }
 
-  componentDidUpdate(prevProps, prevState) {
-    const paddingValue = 20;
-    if (prevProps.activeTab === this.props.activeTab) return;
+  componentDidUpdate(prevProps, prevState) {    
+    if (prevProps.activeTab !== this.props.activeTab) {
+      this._checkViewportOverflows();
+    }
+  }
 
-    const overscrollValue = 50;
-    let curTabLayout = this.tabState[this.props.activeTab];
+  _checkViewportOverflows() {
+    const getScreenMargin = (props) => {
+      return StyleSheet.flatten([styles.tab, props.tabStyles.tab]).marginLeft;
+    };
 
-    if ((curTabLayout.x + curTabLayout.width - this.state.tabScrollValue) > screen_width) {
-      let scrollValue = curTabLayout.x + curTabLayout.width - screen_width;
-      if (this.props.tabs.length != this.props.activeTab + 1) scrollValue += overscrollValue;
-      this.scrollTabs.scrollTo({x: scrollValue + paddingValue, y: 0});
-    } else if (curTabLayout.x < this.state.tabScrollValue) {
-      if (this.props.activeTab === 0) this.scrollTabs.scrollTo({x: 0, y: 0});
-      else this.scrollTabs.scrollTo({x: curTabLayout.x - overscrollValue, y: 0});
+    const screenMargin = getScreenMargin(this.props);
+    const currentTabLayout = this.tabState[this.props.activeTab];
+    const rightOverflow = currentTabLayout.x + currentTabLayout.width - SCREEN_WIDTH;
+    const hasRightViewportOverflow = rightOverflow > this.state.tabScrollValue;
+    const hasLeftViewportOverflow = (currentTabLayout.x < this.state.tabScrollValue);
+
+    if (hasRightViewportOverflow) {      
+      const isLastTab = this.props.tabs.length === this.props.activeTab + 1;
+      const n = isLastTab ? 1 : 2;
+      const x = rightOverflow + screenMargin * n;
+      const y = 0;
+      return this.scrollTabs.scrollTo({x , y});
+    }
+
+    if (hasLeftViewportOverflow) {
+      const isFirstTab = this.props.activeTab === 0;
+      const x = isFirstTab? 0 : currentTabLayout.x - screenMargin * 2;
+      const y = 0;
+      return this.scrollTabs.scrollTo({x, y});
     }
   }
 
   onTabLayout(event, page) {
     var {x, y, width, height} = event.nativeEvent.layout;
-    this.tabState[page] = {x: x, y: y, width: width, height: height};
+    this.tabState[page] = {x, y, width, height};
     if (this.props.tabs.length === Object.keys(this.tabState).length) {
       this.setState({renderUnderline: true});
     }
   }
 
-  renderTabOption(tab, page) {
+  renderTab = (tab, page) => {
     const {activeTab, tabBadgeColor} = this.props;
     const {label, badge, badgeColor} = tab;
     const isTabActive = activeTab === page;
@@ -116,15 +134,13 @@ class TabBar extends Component {
                           key={page}
                           onPress={() => this.props.goToPage(page)}
                           onLayout={(event) => this.onTabLayout(event, page)}>
-          <View style={{flexDirection: 'row'}}>
-            <Text style={[{color: isTabActive ? activeTextColor : inactiveTextColor, fontWeight: isTabActive ? '400' : '400'}, textStyle]}>{label}</Text>
+           <Text style={[{color: isTabActive ? activeTextColor : inactiveTextColor, fontWeight: isTabActive ? '400' : '400'}, textStyle]}>{label}</Text>
             {badge != null && badge > 0 &&
             <View style={[styles.badgeBubble,
                           this.props.tabStyles.badgeBubble,
                           {backgroundColor: badgeColor || activeTextColor}]}>
               <Text style={[styles.badgeText, this.props.tabStyles.badgeText]}>{badge || 0}</Text>
             </View>}
-          </View>
         </TouchableOpacity>
     );
   }
@@ -169,7 +185,7 @@ class TabBar extends Component {
                       bounces={false}
                       scrollEventThrottle={16}
                       onScroll={(e) => this.setState({tabScrollValue: e.nativeEvent.contentOffset.x})}>
-            {this.props.tabs.map((tab, i) => this.renderTabOption(tab, i))}
+            {this.props.tabs.map(this.renderTab)}
             {this.state.renderUnderline && this.renderUnderline()}
           </ScrollView>
         </View>
