@@ -177,7 +177,7 @@ class TabBar extends Component {
 
   render() {
     return (
-        <View style={[styles.tabs, {backgroundColor : this.props.backgroundColor}, this.props.style, this.props.tabBarStyle]}>
+        <Animated.View style={[styles.tabs, {backgroundColor : this.props.backgroundColor}, this.props.style, this.props.tabBarStyle]}>
           <ScrollView horizontal={true}
                       contentContainerStyle={[styles.scrollContainer, this.props.scrollContainerStyle]}
                       showsHorizontalScrollIndicator={false}
@@ -188,7 +188,7 @@ class TabBar extends Component {
             {this.props.tabs.map(this.renderTab)}
             {this.state.renderUnderline && this.renderUnderline()}
           </ScrollView>
-        </View>
+        </Animated.View>
     );
   }
 }
