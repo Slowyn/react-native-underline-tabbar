@@ -193,4 +193,4 @@ class TabBar extends Component {
   }
 }
 
-module.exports = TabBar;
+module.exports = TabBar; 
