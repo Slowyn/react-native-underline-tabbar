@@ -23,5 +23,15 @@
   "bugs": {
     "url": "https://github.com/Slowyn/react-native-underline-tabbar/issues"
   },
-  "homepage": "https://github.com/Slowyn/react-native-underline-tabbar#readme"
+  "homepage": "https://github.com/Slowyn/react-native-underline-tabbar#readme",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "eslint": "^3.18.0",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.10.3",
+    "prettier-eslint": "^4.3.2"
+  }
 }
