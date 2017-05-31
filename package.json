@@ -2,7 +2,7 @@
   "name": "react-native-underline-tabbar",
   "version": "1.0.5",
   "description": "Custom Tabbar for https://github.com/skv-headless/react-native-scrollable-tab-view",
-  "main": "TabBar.js",
+  "main": "index.js",
   "directories": {
     "example": "example"
   },
@@ -24,14 +24,19 @@
     "url": "https://github.com/Slowyn/react-native-underline-tabbar/issues"
   },
   "homepage": "https://github.com/Slowyn/react-native-underline-tabbar#readme",
-  "dependencies": {
+  "dependencies": {},
+  "peerDependencies": {
+    "react-native": ">=0.38.0",
+    "react": ">=0.15.0"
   },
   "devDependencies": {
-    "eslint": "^3.18.0",
-    "eslint-config-airbnb": "^14.1.0",
-    "eslint-plugin-import": "^2.2.0",
-    "eslint-plugin-jsx-a11y": "^4.0.0",
-    "eslint-plugin-react": "^6.10.3",
-    "prettier-eslint": "^4.3.2"
+    "babel-eslint": "^7.2.3",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb": "^15.0.1",
+    "eslint-plugin-flowtype": "^2.34.0",
+    "eslint-plugin-import": "^2.3.0",
+    "eslint-plugin-jsx-a11y": "^5.0.3",
+    "eslint-plugin-react": "^7.0.1",
+    "flow-bin": "^0.47.0"
   }
 }

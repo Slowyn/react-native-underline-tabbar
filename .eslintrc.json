@@ -1,8 +1,16 @@
 {
-  "extends": "airbnb",
-  "plugins": [
-    "react",
-    "jsx-a11y",
-    "import"
-  ]
+    "extends": ["airbnb", "plugin:flowtype/recommended"],
+    "parser": "babel-eslint",
+    "plugins": [
+        "react",
+        "jsx-a11y",
+        "import",
+        "flowtype"
+    ],
+    "rules": {
+        "no-return-assign": "off",
+        "no-mixed-operators": "off",
+        "react/sort-comp": "off",
+        "react/jsx-file-name-extension": "off"
+    }
 }
