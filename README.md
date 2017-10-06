@@ -4,9 +4,11 @@ it involves some features e.g. scrollable content in tabs. Animations are build 
 In new version there was significantly improved behaviour of tabbar.
 
 ### Instalation
-```npm install react-native-underline-tabbar --save```
-Or using Yarn
-```yarn add react-native-underline-tabbar```
+```
+        npm install react-native-underline-tabbar --save
+        Or using Yarn
+        yarn add react-native-underline-tabbar
+```
 
 ### Demo
 ![react-native-underline-tabbar demo](https://raw.githubusercontent.com/Slowyn/react-native-underline-tabbar/master/demo.gif)
