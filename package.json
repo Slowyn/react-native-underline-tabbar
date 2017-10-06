@@ -3,9 +3,6 @@
   "version": "1.0.5",
   "description": "Custom Tabbar for https://github.com/skv-headless/react-native-scrollable-tab-view",
   "main": "index.js",
-  "directories": {
-    "example": "example"
-  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -24,19 +21,27 @@
     "url": "https://github.com/Slowyn/react-native-underline-tabbar/issues"
   },
   "homepage": "https://github.com/Slowyn/react-native-underline-tabbar#readme",
-  "dependencies": {},
   "peerDependencies": {
-    "react-native": ">=0.38.0",
-    "react": ">=0.15.0"
+    "react": "*",
+    "react-native": ">0.42.0"
   },
   "devDependencies": {
-    "babel-eslint": "^7.2.3",
-    "eslint": "^3.19.0",
-    "eslint-config-airbnb": "^15.0.1",
-    "eslint-plugin-flowtype": "^2.34.0",
-    "eslint-plugin-import": "^2.3.0",
-    "eslint-plugin-jsx-a11y": "^5.0.3",
-    "eslint-plugin-react": "^7.0.1",
-    "flow-bin": "^0.47.0"
-  }
+    "babel-eslint": "^8.0.1",
+    "babel-plugin-module-resolver": "^2.3.0",
+    "babel-preset-airbnb": "^1.1.1",
+    "babel-preset-react-native": "1.9.0",
+    "eslint": "^4.8.0",
+    "eslint-config-airbnb": "^15.1.0",
+    "eslint-import-resolver-babel-module": "^2.2.1",
+    "eslint-plugin-flowtype": "^2.39.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-prettier": "^2.3.1",
+    "eslint-plugin-react": "^7.4.0",
+    "flow-bin": "^0.56.0",
+    "prettier": "^1.7.0",
+    "react": "16.0.0-alpha.12",
+    "react-native": "0.48.4"
+  },
+  "dependencies": {}
 }
