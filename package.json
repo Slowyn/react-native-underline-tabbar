@@ -21,7 +21,9 @@
     "url": "https://github.com/Slowyn/react-native-underline-tabbar/issues"
   },
   "homepage": "https://github.com/Slowyn/react-native-underline-tabbar#readme",
-  "peerDependencies": {},
+  "peerDependencies": {
+    "react-native": ">=0.20.0"
+  },
   "devDependencies": {
     "babel-eslint": "^8.0.1",
     "babel-plugin-module-resolver": "^2.3.0",
