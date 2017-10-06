@@ -70,8 +70,8 @@ Notice! In case of using this tabbar we must pass object into tabLabel property.
 | `tabs`       | `{label: string, badge:string, badgeColor?: string}[]` | `required` | It's used to render tabs |
 | `underlineColor`       | `string` | `"navy"` | Set a color of underline |
 | `tabBarStyle`       | `Object` | `{}` | You can set styles to TabBar container |
-| `activeTabTextStyle`       | `Object` | `{}` | You can set styles to text in tabs |
-| `activeTabTextStyle`       | `Object` | `{}` | You can set styles to text in tabs |
+| `activeTabTextStyle`       | `Object` | `{}` | You can set styles to text in tabs while tab is active |
+| `tabBarTextStyle`       | `Object` | `{}` | You can set styles to text in tabs |
 
 
 ### TODO
