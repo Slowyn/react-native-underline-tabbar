@@ -1,6 +1,7 @@
 # react-native-underline-tabbar
 Custom Tabbar for https://github.com/skv-headless/react-native-scrollable-tab-view.
-It is based on defaultTabBar but involves some features e.g. scrollable content in tabs.
+it involves some features e.g. scrollable content in tabs. Animations are build on matrix transformations and fully compatible with `Animated` library.
+In new version there was significantly improved behaviour of tabbar.
 
 ### Instalation
 ```npm install react-native-underline-tabbar --save```
