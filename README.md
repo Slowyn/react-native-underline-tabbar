@@ -4,6 +4,8 @@ It is based on defaultTabBar but involves some features e.g. scrollable content 
 
 ### Instalation
 ```npm install react-native-underline-tabbar --save```
+Or using Yarn
+```yarn add react-native-underline-tabbar```
 
 ### Demo
 ![react-native-underline-tabbar demo](https://raw.githubusercontent.com/Slowyn/react-native-underline-tabbar/master/demo.gif)
@@ -57,7 +59,26 @@ class example extends Component {
 }
 ```
 Notice! In case of using this tabbar we must pass object into tabLabel property. It is needed for setting labels and badges.
-See [example here](https://github.com/Slowyn/react-native-underline-tabbar/tree/master/example)
 
 ### Documentation
-It will be done if needed.
+
+| Property | Type | Default | Description |
+|-----------|----------|----------|--------------------------------------------|
+| `tabs`       | `{label: string, badge:string, badgeColor?: string}[]` | `required` | It's used to render tabs |
+| `underlineColor`       | `string` | `"navy"` | Set a color of underline |
+| `tabBarStyle`       | `Object` | `{}` | You can set styles to TabBar container |
+| `activeTabTextStyle`       | `Object` | `{}` | You can set styles to text in tabs |
+| `activeTabTextStyle`       | `Object` | `{}` | You can set styles to text in tabs |
+
+
+### TODO
+
+- [ ] Improve documentation and finish documentation
+
+- [ ] Allow to pass custom views to render tabs
+
+- [ ] Add more customization
+
+
+
+
