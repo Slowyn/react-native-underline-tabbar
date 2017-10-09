@@ -66,17 +66,28 @@ Notice! In case of using this tabbar we must pass object into tabLabel property.
 ### Documentation
 
 | Property | Type | Default | Description |
-|-----------|----------|----------|--------------------------------------------|
-| `tabs`       | `{label: string, badge:string, badgeColor?: string}[]` | `required` | It's used to render tabs |
-| `underlineColor`       | `string` | `"navy"` | Set a color of underline |
+|-----------|---------------------|----------|--------------------------------------------|
+| `tabs`       | `{label: string, badge:string, badgeColor?: string}[]` | `required` | You don't have to pass this prop directly to tabbar. Istead, it's automatically passed from `ScrollableTabView` from `tabLabel` of your page. In defaultTabbar it is used only to pass a label, but we use it to pass there information about badges. Example ```tabLabel={{label: "Page #4", badge: 8, badgeColor: 'violet'}}```|
+| `underlineColor`       | `string` | `"navy"` | Set a color for underline |
 | `tabBarStyle`       | `Object` | `{}` | You can set styles to TabBar container |
 | `activeTabTextStyle`       | `Object` | `{}` | You can set styles to text in tabs while tab is active |
 | `tabBarTextStyle`       | `Object` | `{}` | You can set styles to text in tabs |
+| `tabBadgeColor`       | `string` | `{}` | Set a common color for all badges. To set badgeColor individually use `badgeColor` in `tab` property |
+| `tabMargin`       | `number` | `20` | You can set space between tabs |
+
+### Changelog
+
+- **[1.1.4]**
+  + Calculating of interpolation values happens only when all mandatory views are measured. It prevents incorrect behaviour of tabs scrolling and underline.
+  + Now you can set default colour for badges via `tabBadgeColor` prop
+  + Now you can set margins between tabs via `tabMargin` prop
+
+
 
 
 ### TODO
 
-- [ ] Improve documentation and finish documentation
+- [ ] Improve documentation
 
 - [ ] Allow to pass custom views to render tabs
 
