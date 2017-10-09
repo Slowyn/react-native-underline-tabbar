@@ -5,9 +5,9 @@ In new version there was significantly improved behaviour of tabbar.
 
 ### Instalation
 ```
-        npm install react-native-underline-tabbar --save
-        Or using Yarn
-        yarn add react-native-underline-tabbar
+npm install react-native-underline-tabbar --save
+Or using Yarn
+yarn add react-native-underline-tabbar
 ```
 
 ### Demo
@@ -46,9 +46,8 @@ class example extends Component {
     return (
         <View style={[styles.container, {paddingTop: 20}]}>
           <ScrollableTabView
-              tabBarUnderlineColor="#53ac49"
               tabBarActiveTextColor="#53ac49"
-              renderTabBar={() => <TabBar/>}>
+              renderTabBar={() => <TabBar underlineColor="#53ac49" />}>
             <Page tabLabel={{label: "Page #1"}} label="Page #1"/>
             <Page tabLabel={{label: "Page #2 aka Long!", badge: 3}} label="Page #2 aka Long!"/>
             <Page tabLabel={{label: "Page #3"}} label="Page #3"/>
