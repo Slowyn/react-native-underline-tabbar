@@ -75,8 +75,9 @@ Notice! In case of using this tabbar we must pass object into tabLabel property.
 | `tabMargin`       | `number` | `20` | You can set space between tabs |
 
 ### Changelog
-
-- **[1.1.4]**
+- **[1.1.5]**
+  + Prevent crashing on android devices
+- [1.1.4]
   + Calculating of interpolation values happens only when all mandatory views are measured. It prevents incorrect behaviour of tabs scrolling and underline.
   + Now you can set default colour for badges via `tabBadgeColor` prop
   + Now you can set margins between tabs via `tabMargin` prop
