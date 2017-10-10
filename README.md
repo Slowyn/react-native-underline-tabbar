@@ -75,7 +75,9 @@ Notice! In case of using this tabbar we must pass object into tabLabel property.
 | `tabMargin`       | `number` | `20` | You can set space between tabs |
 
 ### Changelog
-- **[1.1.5]**
+- **[1.1.6]**
+  + Change hardcoded marginValue on value from props to calculate scroll positions properly
+- [1.1.5]
   + Prevent crashing on android devices
 - [1.1.4]
   + Calculating of interpolation values happens only when all mandatory views are measured. It prevents incorrect behaviour of tabs scrolling and underline.
