@@ -77,7 +77,7 @@ Notice! In case of using this tabbar we must pass object into tabLabel property.
 Warning: It's better to avoid usage of styles which can change the size of your active tab. E.g. `font-weight`, `font-size`. Underline still work but not as good as you can expect.
 
 ### Changelog
-- **[1.1.8]**
+- **[1.2.0]**
   + Initial setup now depends on `initialPage` prop.
   + Calculating of interpolations now doesn't apply transformations to underline. It prevents flickering when tab has styles which resize it
   + Better scrolling in case of manual scrolling of TabBar
