@@ -74,6 +74,8 @@ Notice! In case of using this tabbar we must pass object into tabLabel property.
 | `tabBadgeColor`       | `string` | `{}` | Set a common color for all badges. To set badgeColor individually use `badgeColor` in `tab` property |
 | `tabMargin`       | `number` | `20` | You can set space between tabs |
 
+Warning: It's better to avoid usage of styles which can change the size of your active tab. E.g. `font-weight`, `font-size`. Underline still work but not as good as you can expect.
+
 ### Changelog
 - **[1.1.8]**
   + Initial setup now depends on `initialPage` prop.
