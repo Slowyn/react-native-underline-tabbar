@@ -75,7 +75,11 @@ Notice! In case of using this tabbar we must pass object into tabLabel property.
 | `tabMargin`       | `number` | `20` | You can set space between tabs |
 
 ### Changelog
-- **[1.1.7]**
+- **[1.1.8]**
+  + Initial setup now depends on `initialPage` prop.
+  + Calculating of interpolations now doesn't apply transformations to underline. It prevents flickering when tab has styles which resize it
+  + Better scrolling in case of manual scrolling of TabBar
+- [1.1.7]
   + Remove possible unnecessary transformations to underline. It improves behaviour on Android
 - [1.1.6]
   + Change hardcoded marginValue on value from props to calculate scroll positions properly
