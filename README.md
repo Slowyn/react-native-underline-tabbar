@@ -13,8 +13,22 @@ yarn add react-native-underline-tabbar
 ### Demo
 ![react-native-underline-tabbar demo](https://raw.githubusercontent.com/Slowyn/react-native-underline-tabbar/master/demo.gif)
 
+### Documentation
 
-### Usage
+| Property | Type | Default | Description |
+|-----------|---------------------|----------|--------------------------------------------|
+| `tabs`       | `{label: string, badge:string, badgeColor?: string, [string]: any}[]` | `required` | You don't have to pass this prop directly to tabbar. Istead, it's automatically passed from `ScrollableTabView` from `tabLabel` of your page. In defaultTabbar it is used only to pass a label, but we use it to pass there information about badges. Example ```tabLabel={{label: "Page #4", badge: 8, badgeColor: 'violet'}}```. Also you can pass any data you need as  it's used as `Map`|
+| `underlineColor`       | `string` | `"navy"` | Set a color for underline. You can use also `transparent` to hide underline |
+| `tabBarStyle`       | `Object` | `{}` | You can set styles to TabBar container |
+| `activeTabTextStyle`       | `Object` | `{}` | You can set styles to text in tabs while tab is active |
+| `tabBarTextStyle`       | `Object` | `{}` | You can set styles to text in tabs |
+| `tabBadgeColor`       | `string` | `{}` | Set a common color for all badges. To set badgeColor individually use `badgeColor` in `tab` property |
+| `tabMargin`       | `number` | `20` | You can set space between tabs |
+
+**Warning**: It's better to avoid usage of styles which can change the size of your active tab. E.g. `font-weight`, `font-size`. Underline still work but not as good as you can expect.
+
+
+### Simple Usage
 ```javascript
 import React, { Component } from 'react';
 import {
@@ -60,24 +74,134 @@ class example extends Component {
   }
 }
 ```
+
+### Advanced usage
+```javascript
+import React, { Component } from 'react';
+import { StyleSheet, Text, View, TouchableOpacity, Animated } from 'react-native';
+import ScrollableTabView from 'react-native-scrollable-tab-view';
+import TabBar from 'react-native-underline-tabbar';
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#F5FCFF',
+  },
+  welcome: {
+    fontSize: 20,
+    textAlign: 'center',
+    margin: 10,
+  },
+  instructions: {
+    textAlign: 'center',
+    color: '#333333',
+    marginBottom: 5,
+    fontSize: 28,
+  },
+});
+
+const Page = ({label, text = ''}) => (
+  <View style={styles.container}>
+    <Text style={styles.welcome}>
+      {label}
+    </Text>
+    <Text style={styles.instructions}>
+      {text}
+    </Text>
+  </View>
+);
+
+const Tab = (tab, page, isTabActive, onPressHandler, onTabLayout, styles) => {
+  const { label } = tab;
+  const style = {
+    marginHorizontal: 20,
+    paddingVertical: 10,
+  };
+  const containerStyle = {
+    paddingHorizontal: 20,
+    paddingVertical: 5,
+    borderRadius: 25,
+    backgroundColor: styles.backgroundColor,
+    opacity: styles.opacity,
+    transform: [{ scale: styles.opacity }],
+  };
+  const textStyle = {
+    color: styles.textColor,
+    fontWeight: '600',
+  };
+  return (
+    <TouchableOpacity style={style} onPress={onPressHandler} onLayout={onTabLayout} key={page}>
+      <Animated.View style={containerStyle}>
+        <Animated.Text style={textStyle}>{label}</Animated.Text>
+      </Animated.View>
+    </TouchableOpacity>
+  );
+};
+
+class UnderlineTabBarExample extends Component {
+  _scrollX = new Animated.Value(0);
+  // 6 is a quantity of tabs
+  interpolators = new Array(6).fill(0).map((_, i) => i).map((i) => ({
+    scale: this._scrollX.interpolate({
+      inputRange: [i - 1, i, i + 1],
+      outputRange: [1, 1.2, 1],
+    }),
+    opacity: this._scrollX.interpolate({
+      inputRange: [i - 1, i, i + 1],
+      outputRange: [0.9, 1, 0.9],
+    }),
+    textColor: this._scrollX.interpolate({
+      inputRange: [i - 1, i, i + 1],
+      outputRange: ['#000', '#fff', '#000'],
+    }),
+    backgroundColor: this._scrollX.interpolate({
+      inputRange: [i - 2, i - 1, i, i + 1, i + 2],
+      outputRange: ['rgba(0,0,0,0.1)', 'rgba(0,0,0,0.1)', '#000', 'rgba(0,0,0,0.1)', 'rgba(0,0,0,0.1)'],
+    }),
+  }));
+  render() {
+    return (
+      <View style={[styles.container, {paddingTop: 20}]}>
+        <ScrollableTabView
+          renderTabBar={() => (
+            <TabBar
+              underlineColor="#000"
+              tabBarStyle={{ backgroundColor: "#fff", borderTopColor: '#d2d2d2', borderTopWidth: 1 }}
+              renderTab={(...props) => {
+                return Tab(...props, this.interpolators[props[1]]);
+              }}
+            />
+          )}
+          onScroll={(x) => this._scrollX.setValue(x)}
+        >
+          <Page tabLabel={{label: "Hot"}} label="Page #1 Hot" text="You can pass your own views to TabBar!"/>
+          <Page tabLabel={{label: "Trending", badge: 3}} label="Page #2 Trending" text="Yehoo!!!"/>
+          <Page tabLabel={{label: "Fresh", badge: 30, badgeColor: 'red'}} label="Page #3 Fresh" text="Hooray!"/>
+          <Page tabLabel={{label: "Funny", badge: 8, badgeColor: 'violet'}} label="Page #4 Funny"/>
+          <Page tabLabel={{label: "Movie & TV"}} label="Page #5 Movie & TV"/>
+          <Page tabLabel={{label: "Sport"}} label="Page #6 Sport"/>
+        </ScrollableTabView>
+      </View>
+    );
+  }
+}
+
+```
+
 Notice! In case of using this tabbar we must pass object into tabLabel property. It is needed for setting labels and badges.
 
-### Documentation
 
-| Property | Type | Default | Description |
-|-----------|---------------------|----------|--------------------------------------------|
-| `tabs`       | `{label: string, badge:string, badgeColor?: string}[]` | `required` | You don't have to pass this prop directly to tabbar. Istead, it's automatically passed from `ScrollableTabView` from `tabLabel` of your page. In defaultTabbar it is used only to pass a label, but we use it to pass there information about badges. Example ```tabLabel={{label: "Page #4", badge: 8, badgeColor: 'violet'}}```|
-| `underlineColor`       | `string` | `"navy"` | Set a color for underline |
-| `tabBarStyle`       | `Object` | `{}` | You can set styles to TabBar container |
-| `activeTabTextStyle`       | `Object` | `{}` | You can set styles to text in tabs while tab is active |
-| `tabBarTextStyle`       | `Object` | `{}` | You can set styles to text in tabs |
-| `tabBadgeColor`       | `string` | `{}` | Set a common color for all badges. To set badgeColor individually use `badgeColor` in `tab` property |
-| `tabMargin`       | `number` | `20` | You can set space between tabs |
-
-Warning: It's better to avoid usage of styles which can change the size of your active tab. E.g. `font-weight`, `font-size`. Underline still work but not as good as you can expect.
+### Example
+[Example is located here](https://github.com/Slowyn/UnderlineTabBarExample)
 
 ### Changelog
-- **[1.2.0]**
+- **[1.2.1]**
+  + Now it's possible to pass your own `renderTab` function (hooray!). It opens a big possibilities for customization
+  + Type of `Tab` has been changed. Now it's a map in which you can pass any data you need to use it into your custom Tab view
+  + Added example
+- [1.2.0]
   + Initial setup now depends on `initialPage` prop.
   + Calculating of interpolations now doesn't apply transformations to underline. It prevents flickering when tab has styles which resize it
   + Better scrolling in case of manual scrolling of TabBar
@@ -91,18 +215,6 @@ Warning: It's better to avoid usage of styles which can change the size of your 
   + Calculating of interpolation values happens only when all mandatory views are measured. It prevents incorrect behaviour of tabs scrolling and underline.
   + Now you can set default colour for badges via `tabBadgeColor` prop
   + Now you can set margins between tabs via `tabMargin` prop
-
-
-
-
-### TODO
-
-- [ ] Improve documentation
-
-- [ ] Allow to pass custom views to render tabs
-
-- [ ] Add more customization
-
 
 
 
