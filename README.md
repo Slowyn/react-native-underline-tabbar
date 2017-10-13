@@ -197,7 +197,9 @@ Notice! In case of using this tabbar we must pass object into tabLabel property.
 [Example is located here](https://github.com/Slowyn/UnderlineTabBarExample)
 
 ### Changelog
-- **[1.2.1]**
+- **[1.2.2]**
+  + Minor changes
+- [1.2.1]
   + Now it's possible to pass your own `renderTab` function (hooray!). It opens a big possibilities for customization
   + Type of `Tab` has been changed. Now it's a map in which you can pass any data you need to use it into your custom Tab view
   + Added example

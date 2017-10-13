@@ -1,6 +1,6 @@
 {
   "name": "react-native-underline-tabbar",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "Custom Tabbar for https://github.com/skv-headless/react-native-scrollable-tab-view",
   "main": "index.js",
   "scripts": {
@@ -12,8 +12,21 @@
   },
   "keywords": [
     "react-native",
+    "react",
+    "component",
     "react-native-scrollable-tab-view",
-    "tabbar"
+    "tabbar",
+    "react-native-component",
+    "react-component",
+    "ios",
+    "scrollable",
+    "tab",
+    "scroll",
+    "scrolling",
+    "items",
+    "snap",
+    "android",
+    "ios"
   ],
   "author": "K. E. Yakushin",
   "license": "MIT",
