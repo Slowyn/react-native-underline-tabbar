@@ -1,7 +1,7 @@
 # react-native-underline-tabbar
 Custom Tabbar for https://github.com/skv-headless/react-native-scrollable-tab-view.
-it involves some features e.g. scrollable content in tabs. Animations are build on matrix transformations and fully compatible with `Animated` library.
-In new version there was significantly improved behaviour of tabbar.
+It consists of some features e.g. scrollable content in tabs. Animations are build on matrix transformations and fully compatible with `Animated` library.
+In a new version there was significant improvement of tabbar behaviour.
 
 ### Instalation
 ```
@@ -239,33 +239,33 @@ class UnderlineTabBarExample extends Component {
 
 ```
 
-Notice! In case of using this tabbar we must pass object into tabLabel property. It is needed for setting labels and badges.
+Notice! In case of using this tabbar we must pass object into tabLabel property. It is necessary to set labels and badges.
 
 
 ### Example
-[Example is located here](https://github.com/Slowyn/UnderlineTabBarExample)
+[Example is here](https://github.com/Slowyn/UnderlineTabBarExample)
 
 ### Changelog
 - **[1.2.2]**
   + Minor changes
 - [1.2.1]
-  + Now it's possible to pass your own `renderTab` function (hooray!). It opens a big possibilities for customization
-  + Type of `Tab` has been changed. Now it's a map in which you can pass any data you need to use it into your custom Tab view
-  + Added example
+  + Now it's possible to pass your own `renderTab` function (hooray!). It opens many opportunities for customization
+  + Type of `Tab` has been changed. Now it's a map where you can pass any data you need to use in your custom Tab view
+  + Example has been added
 - [1.2.0]
   + Initial setup now depends on `initialPage` prop.
   + Calculating of interpolations now doesn't apply transformations to underline. It prevents flickering when tab has styles which resize it
-  + Better scrolling in case of manual scrolling of TabBar
+  + Better manual scrolling performance of TabBar
 - [1.1.7]
-  + Remove possible unnecessary transformations to underline. It improves behaviour on Android
+  + Possibly unnecessary transformations to underline have been removed. It improves behaviour on Android
 - [1.1.6]
   + Change hardcoded marginValue on value from props to calculate scroll positions properly
 - [1.1.5]
   + Prevent crashing on android devices
 - [1.1.4]
-  + Calculating of interpolation values happens only when all mandatory views are measured. It prevents incorrect behaviour of tabs scrolling and underline.
-  + Now you can set default colour for badges via `tabBadgeColor` prop
-  + Now you can set margins between tabs via `tabMargin` prop
+  + Interpolation values are calculated only when all mandatory views are measured. It prevents incorrect behaviour of tabs scrolling and underline.
+  + Now you can set default colour for badges using `tabBadgeColor` prop
+  + Now you can set margins between tabs using `tabMargin` prop
 
 
 
