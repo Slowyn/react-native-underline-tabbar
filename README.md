@@ -1,19 +1,21 @@
 # react-native-underline-tabbar
+[![npm version](https://badge.fury.io/js/react-native-underline-tabbar.svg)](https://badge.fury.io/js/react-native-underline-tabbar)
+
 Custom Tabbar for https://github.com/skv-headless/react-native-scrollable-tab-view.
 It consists of some features e.g. scrollable content in tabs. Animations are build on matrix transformations and fully compatible with `Animated` library.
 In a new version there was significant improvement of tabbar behaviour.
 
-### Instalation
+## Instalation
 ```
 npm install react-native-underline-tabbar --save
 Or using Yarn
 yarn add react-native-underline-tabbar
 ```
 
-### Showcase
+## Showcase
 ![react-native-underline-tabbar demo](https://raw.githubusercontent.com/Slowyn/react-native-underline-tabbar/master/demo.gif)
 
-### Documentation
+## Documentation
 
 | Property | Type | Default | Description |
 |-----------|---------------------|----------|--------------------------------------------|
@@ -28,7 +30,7 @@ yarn add react-native-underline-tabbar
 **Warning**: It's better to avoid usage of styles which can change the size of your active tab. E.g. `font-weight`, `font-size`. Underline still work but not as good as you can expect.
 
 
-### Simple Usage
+## Simple Usage
 ```javascript
 import React, { Component } from 'react';
 import {
@@ -75,7 +77,7 @@ class example extends Component {
 }
 ```
 
-### Advanced usage
+## Advanced usage
 ```javascript
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, Animated } from 'react-native';
@@ -187,21 +189,6 @@ class UnderlineTabBarExample extends Component {
     return (
       <View style={[styles.container, { paddingTop: 20 }]}>
         <ScrollableTabView
-          tabBarUnderlineColor="#53ac49"
-          tabBarActiveTextColor="#53ac49"
-          renderTabBar={() => (
-            <TabBar underlineColor="#53ac49" activeTabTextStyle={{ color: "#53ac49" }} />
-          )}
-        >
-          <Page tabLabel={{label: "Page #1"}} label="Page #1"/>
-          <Page tabLabel={{label: "Page #2 aka Long!", badge: 3}} label="Page #2 aka Long!"/>
-          <Page tabLabel={{label: "Page #3", badge: 30, badgeColor: 'red'}} label="Page #3"/>
-          <Page tabLabel={{label: "Page #4 aka Page", badge: 8, badgeColor: 'violet'}} label="Page #4 aka Page"/>
-          <Page tabLabel={{label: "Page #5"}} label="Page #5"/>
-          <Page tabLabel={{label: "Page #6 SUPER HYPER LONG PAGE"}} label="Page #6 SUPER HYPER LONG PAGE WITH NITRO ACCELERATORS"/>
-        </ScrollableTabView>
-
-        <ScrollableTabView
           renderTabBar={() => (
             <TabBar
               underlineColor="#000"
@@ -220,17 +207,6 @@ class UnderlineTabBarExample extends Component {
           <Page tabLabel={{label: "Movie & TV", icon: iconsSet.movieAndTv}} label="Page #5 Movie & TV"/>
           <Page tabLabel={{label: "Sport", icon: iconsSet.sport}} label="Page #6 Sport"/>
         </ScrollableTabView>
-
-        <ScrollableTabView
-          tabBarUnderlineColor="#53ac49"
-          tabBarActiveTextColor="#53ac49"
-          renderTabBar={() => <TabBar/>}
-        >
-          <Page tabLabel={{label: "Page #1"}} label="Page #1"/>
-          <Page tabLabel={{label: "Page #2", badge: 3}} label="Page #2 aka Long!"/>
-          <Page tabLabel={{label: "Page #3"}} label="Page #3"/>
-        </ScrollableTabView>
-
       </View>
     );
   }
@@ -242,13 +218,15 @@ class UnderlineTabBarExample extends Component {
 Notice! In case of using this tabbar we must pass object into tabLabel property. It is necessary to set labels and badges.
 
 
-### Example
+## Example
 [Example is here](https://github.com/Slowyn/UnderlineTabBarExample)
 
-### Changelog
-- **[1.2.3]**
+## Changelog
+- **[1.2.4]**
+    + Update descriptions.
+- [1.2.3]
   + Fixed bug when user provide less than two tabs.
-- **[1.2.2]**
+- [1.2.2]
   + Minor changes
 - [1.2.1]
   + Now it's possible to pass your own `renderTab` function (hooray!). It opens many opportunities for customization
