@@ -246,6 +246,8 @@ Notice! In case of using this tabbar we must pass object into tabLabel property.
 [Example is here](https://github.com/Slowyn/UnderlineTabBarExample)
 
 ### Changelog
+- **[1.2.3]**
+  + Fixed bug when user provide less than two tabs.
 - **[1.2.2]**
   + Minor changes
 - [1.2.1]
