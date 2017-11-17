@@ -21,6 +21,8 @@ yarn add react-native-underline-tabbar
 |-----------|---------------------|----------|--------------------------------------------|
 | `tabs`       | `{label: string, badge:string, badgeColor?: string, [string]: any}[]` | `required` | You don't have to pass this prop directly to tabbar. Istead, it's automatically passed from `ScrollableTabView` from `tabLabel` of your page. In defaultTabbar it is used only to pass a label, but we use it to pass there information about badges. Example ```tabLabel={{label: "Page #4", badge: 8, badgeColor: 'violet'}}```. Also you can pass any data you need as  it's used as `Map`|
 | `underlineColor`       | `string` | `"navy"` | Set a color for underline. You can use also `transparent` to hide underline |
+| `underlineHeight`       | `number` | `2` | Set a height for underline |
+| `underlineBottomPosition`       | `number` | `0` | Set a bottom for underline |
 | `tabBarStyle`       | `Object` | `{}` | You can set styles to TabBar container |
 | `activeTabTextStyle`       | `Object` | `{}` | You can set styles to text in tabs while tab is active |
 | `tabBarTextStyle`       | `Object` | `{}` | You can set styles to text in tabs |
@@ -222,8 +224,11 @@ Notice! In case of using this tabbar we must pass object into tabLabel property.
 [Example is here](https://github.com/Slowyn/UnderlineTabBarExample)
 
 ## Changelog
-- **[1.2.4]**
-    + Update descriptions.
+- **[1.2.5]**
+  + Fix bug when `activeTabTextStyle` had lower priority than just `textStyle`
+  + Add customization for underline
+- [1.2.4]
+  + Update descriptions.
 - [1.2.3]
   + Fixed bug when user provide less than two tabs.
 - [1.2.2]
