@@ -23,11 +23,11 @@ yarn add react-native-underline-tabbar
 | `underlineColor`       | `string` | `"navy"` | Set a color for underline. You can use also `transparent` to hide underline |
 | `underlineHeight`       | `number` | `2` | Set a height for underline |
 | `underlineBottomPosition`       | `number` | `0` | Set a bottom for underline |
-| `tabBarStyle`       | `Object` | `{}` | You can set styles to TabBar container |
-| `activeTabTextStyle`       | `Object` | `{}` | You can set styles to text in tabs while tab is active |
-| `tabBarTextStyle`       | `Object` | `{}` | You can set styles to text in tabs |
+| `tabBarStyle`       | `Object` | `{}` | Set styles to TabBar container |
+| `activeTabTextStyle`       | `Object` | `{}` | Set styles to text in tabs while tab is active |
+| `tabBarTextStyle`       | `Object` | `{}` | Set styles to text in tabs |
 | `tabBadgeColor`       | `string` | `{}` | Set a common color for all badges. To set badgeColor individually use `badgeColor` in `tab` property |
-| `tabMargin`       | `number` | `20` | You can set space between tabs |
+| `tabMargin`       | `number` | `20` | Set space between tabs |
 
 **Warning**: It's better to avoid usage of styles which can change the size of your active tab. E.g. `font-weight`, `font-size`. Underline still work but not as good as you can expect.
 
