@@ -224,7 +224,10 @@ Notice! In case of using this tabbar we must pass object into tabLabel property.
 [Example is here](https://github.com/Slowyn/UnderlineTabBarExample)
 
 ## Changelog
-- **[1.2.5]**
+- **[1.2.6]**
+  + Improve offset calculations for tabs which are located in the end of TabBar
+  + Now you can pass more then 10 tabs to component
+- [1.2.5]
   + Fix bug when `activeTabTextStyle` had lower priority than just `textStyle`
   + Add customization for underline
 - [1.2.4]
