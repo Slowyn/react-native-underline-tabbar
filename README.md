@@ -226,7 +226,7 @@ Notice! In case of using this tabbar we must pass object into tabLabel property.
 ## Changelog
 - **[1.2.6]**
   + Improve offset calculations for tabs which are located in the end of TabBar
-  + Now you can pass more then 10 tabs to component
+  + Now you can pass more than 10 tabs to component
 - [1.2.5]
   + Fix bug when `activeTabTextStyle` had lower priority than just `textStyle`
   + Add customization for underline
