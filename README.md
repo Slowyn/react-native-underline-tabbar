@@ -224,7 +224,9 @@ Notice! In case of using this tabbar we must pass object into tabLabel property.
 [Example is here](https://github.com/Slowyn/UnderlineTabBarExample)
 
 ## Changelog
-- **[1.2.7]**
+- **[1.2.8]**
+  + Minor fix
+- [1.2.7]
   + Types are available for importing
 - [1.2.6]
   + Improve offset calculations for tabs which are located in the end of TabBar
