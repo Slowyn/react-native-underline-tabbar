@@ -226,7 +226,7 @@ Notice! In case of using this tabbar we must pass object into tabLabel property.
 ## Changelog
 - [1.3.0]
   + Fix an error related to types export
-- [1.2.9]
+- [1.2.8]
   + Minor fix
 - [1.2.7]
   + Types are available for importing
