@@ -5,6 +5,14 @@ Custom Tabbar for https://github.com/skv-headless/react-native-scrollable-tab-vi
 It consists of some features e.g. scrollable content in tabs. Animations are build on matrix transformations and fully compatible with `Animated` library.
 In a new version there was significant improvement of tabbar behaviour.
 
+## Contribution
+
+**Issues** are welcome. Please add a screenshot of bug and code snippet. Quickest way to solve issue is to reproduce it on one of the examples.
+
+**Pull requests** are welcome. If you want to change API or making something big better to create issue and discuss it first. Before submiting PR please run ```eslint .``` Also all eslint fixes are welcome.
+
+Please attach video or gif to PR's and issues it is super helpful.
+
 ## Instalation
 ```
 npm install react-native-underline-tabbar --save
@@ -224,6 +232,9 @@ Notice! In case of using this tabbar we must pass object into tabLabel property.
 [Example is here](https://github.com/Slowyn/UnderlineTabBarExample)
 
 ## Changelog
+- **[1.3.3]**
+  + Improve initial setup with `initialPage` property
+  + Remove `shouldScroll` parameter due to its non-ideal work
 - [1.3.2]
   + Update Readme
 - [1.3.1]
