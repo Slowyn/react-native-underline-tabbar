@@ -27,7 +27,7 @@ yarn add react-native-underline-tabbar
 
 | Property | Type | Default | Description |
 |-----------|---------------------|----------|--------------------------------------------|
-| `tabs`       | ```js { label: string, badge:string, badgeColor?: string, [string]: any}[]``` | `required` | You don't have to pass this prop directly to tabbar. Istead, it's automatically passed from `ScrollableTabView` from `tabLabel` of your page. In defaultTabbar it is used only to pass a label, but we use it to pass there information about badges. Example ```tabLabel={{label: "Page #4", badge: 8, badgeColor: 'violet'}}```. Also you can pass any data you need as  it's used as `Map`|
+| `tabs`       | ```{ label: string, badge:string, badgeColor?: string, [string]: any}[]``` | `required` | You don't have to pass this prop directly to tabbar. Istead, it's automatically passed from `ScrollableTabView` from `tabLabel` of your page. In defaultTabbar it is used only to pass a label, but we use it to pass there information about badges. Example ```tabLabel={{label: "Page #4", badge: 8, badgeColor: 'violet'}}```. Also you can pass any data you need as  it's used as `Map`|
 | `underlineColor`       | `string` | `"navy"` | Set a color for underline. You can use also `transparent` to hide underline |
 | `underlineHeight`       | `number` | `2` | Set a height for underline |
 | `underlineBottomPosition`       | `number` | `0` | Set a bottom for underline |
@@ -36,7 +36,7 @@ yarn add react-native-underline-tabbar
 | `tabBarTextStyle`       | `Object` | `{}` | Set styles to text in tabs |
 | `tabBadgeColor`       | `string` | `{}` | Set a common color for all badges. To set badgeColor individually use `badgeColor` in `tab` property |
 | `tabMargin`       | `number` | `20` | Set space between tabs |
-| `tabStyles`       | ```js { tab?: Object, badgeBubble?: Object, badgeText?: Object }``` | ```js { tab: {}, badgeBubble: {}, badgeText: {} }``` | Set styles for every tab and bubble |
+| `tabStyles`       | ``` { tab?: Object, badgeBubble?: Object, badgeText?: Object }``` | ``` { tab: {}, badgeBubble: {}, badgeText: {} }``` | Set styles for every tab and bubble |
 
 
 ## Simple Usage
