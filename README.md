@@ -134,7 +134,7 @@ const iconsSet = {
   sport: require('./images/ic_rowing.png'),
 };
 
-const Tab = (tab, page, isTabActive, onPressHandler, onTabLayout, styles) => {
+const Tab = ({ tab, page, isTabActive, onPressHandler, onTabLayout, styles }) => {
   const { label, icon } = tab;
   const style = {
     marginHorizontal: 20,
@@ -174,7 +174,7 @@ const Tab = (tab, page, isTabActive, onPressHandler, onTabLayout, styles) => {
 class UnderlineTabBarExample extends Component {
   _scrollX = new Animated.Value(0);
   // 6 is a quantity of tabs
-  interpolators = [...Array(6).keys()].map(idx => ({
+  interpolators = Array.from({ length: 6 }, (_, i) => i).map(idx => ({
     scale: this._scrollX.interpolate({
       inputRange: [idx - 1, idx, idx + 1],
       outputRange: [1, 1.2, 1],
@@ -203,9 +203,17 @@ class UnderlineTabBarExample extends Component {
             <TabBar
               underlineColor="#000"
               tabBarStyle={{ backgroundColor: "#fff", borderTopColor: '#d2d2d2', borderTopWidth: 1 }}
-              renderTab={(...props) => {
-                return Tab(...props, this.interpolators[props[1]]);
-              }}
+              renderTab={(tab, page, isTabActive, onPressHandler, onTabLayout) => (
+                <Tab
+                  key={page}
+                  tab={tab}
+                  page={page}
+                  isTabActive={isTabActive}
+                  onPressHandler={onPressHandler}
+                  onTabLayout={onTabLayout}
+                  styles={this.interpolators[page]}
+                />
+              )}
             />
           )}
           onScroll={(x) => this._scrollX.setValue(x)}
@@ -232,7 +240,9 @@ Notice! In case of using this tabbar we must pass object into tabLabel property.
 [Example is here](https://github.com/Slowyn/UnderlineTabBarExample)
 
 ## Changelog
-- **[1.3.3]**
+- **[1.3.4]**
+  + Improve and update `Advance usage` example
+- [1.3.3]
   + Improve initial setup with `initialPage` property
   + Remove `shouldScroll` parameter due to its non-ideal work
 - [1.3.2]
