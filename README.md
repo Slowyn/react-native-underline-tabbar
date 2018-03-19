@@ -1,5 +1,5 @@
 # react-native-underline-tabbar
-[![npm version](https://badge.fury.io/js/react-native-underline-tabbar.svg)](https://badge.fury.io/js/react-native-underline-tabbar)
+[![npm version](https://badge.fury.io/js/react-native-underline-tabbar.svg)](https://badge.fury.io/js/react-native-underline-tabbar) [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
 Custom Tabbar for https://github.com/skv-headless/react-native-scrollable-tab-view.
 It consists of some features e.g. scrollable content in tabs. Animations are build on matrix transformations and fully compatible with `Animated` library.
