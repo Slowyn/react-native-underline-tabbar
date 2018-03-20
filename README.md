@@ -240,8 +240,11 @@ Notice! In case of using this tabbar we must pass object into tabLabel property.
 [Example is here](https://github.com/Slowyn/UnderlineTabBarExample)
 
 ## Changelog
-- **[1.3.4]**
-  + Improve and update `Advance usage` example
+- **[1.3.5]**
+  + Improve underline rerender on tab layout updates
+  + Minor code improvments
+- [1.3.4]
+  + Improve and update `Advanced usage` example
 - [1.3.3]
   + Improve initial setup with `initialPage` property
   + Remove `shouldScroll` parameter due to its non-ideal work
