@@ -37,6 +37,7 @@ yarn add react-native-underline-tabbar
 | `tabBadgeColor`       | `string` | `{}` | Set a common color for all badges. To set badgeColor individually use `badgeColor` in `tab` property |
 | `tabMargin`       | `number` | `20` | Set space between tabs |
 | `tabStyles`       | ``` { tab?: Object, badgeBubble?: Object, badgeText?: Object }``` | ``` { tab: {}, badgeBubble: {}, badgeText: {} }``` | Set styles for every tab and bubble |
+| `scrollContainerStyle`       | `Object` | `{}` | Set styles for the scroll container |
 
 
 ## Simple Usage
