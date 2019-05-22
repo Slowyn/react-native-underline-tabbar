@@ -13,7 +13,7 @@ In a new version there was significant improvement of tabbar behaviour.
 
 Please attach video or gif to PR's and issues it is super helpful.
 
-## Instalation
+## Installation
 ```
 npm install react-native-underline-tabbar --save
 Or using Yarn
